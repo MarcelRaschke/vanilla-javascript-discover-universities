@@ -7,7 +7,7 @@
 ## General info
 Search and discover Universities around the world.
 Try the demo:
-[Demo](https://qaiswardag.github.io/vanilla-javascript-discover-universities/%20Discover%20Universities%20around%20the%20world)
+[Demo](https://qaiswardag.github.io/vanilla-javascript-discover-universities/)
 
 
 
