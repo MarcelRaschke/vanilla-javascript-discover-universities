@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  /* font-size: 10px; */
+
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  /* Does NOT work on Safari */
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
+
+  font-family: 'Jost', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #000;
+}
+
+p {
+  margin-bottom: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 3.2rem 0 3.2rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 7.594rem;
+}
+
+h2 {
+  font-size: 5.063rem;
+}
+
+h3 {
+  font-size: 3.375rem;
+}
+
+h4 {
+  font-size: 2.25rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a,
+button,
+li,
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 1.2px;
+}
+
+small,
+.text_small {
+  font-size: 0.667rem;
+}
+
+hr {
+  background: #000;
+  padding: 0;
+  height: 1px;
+  border: none;
+  margin: 1.2rem 0;
+}
+
+/**************************/
+/* THE ANCHOR ELEMENT & PSEUDO-CLASSES — THE FOUR LINKS STATES */
+/**************************/
+
+a:link {
+  color: brown;
+  text-decoration: none;
+}
+
+a:visited {
+  color: brown;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:active {
+  color: brown;
+  outline: none;
+}
+
+/**************************/
+/* BUTTON */
+/**************************/
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1.2rem 2.2rem;
+  text-align: center;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state" */
+  transition: all 0.2s;
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+  background-color: brown;
+  color: #fff;
+}
+
+/* Modifier */
+.btn--outline,
+.btn--outline:link {
+  box-shadow: inset 0 0 0 2px brown;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn--center {
+  display: block;
+  margin: 20px auto 30px auto;
+}
+
+.btn--top-margin {
+  margin: 20px auto 0 auto;
+}
+
+.btn--display-block {
+  display: block;
+}
+
+/**************************/
+/* HEADER & NAVIGATION */
+/**************************/
+
+.header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+/**************************/
+/* LOGO */
+/**************************/
+
+.logo:link,
+.logo:visited {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.logo:active {
+  color: #000;
+}
+
+/**************************/
+/* NAVIGATION */
+/**************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+
+  /* align-items: center; */
+  /* gap: 4.8rem; */
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  color: #000;
+  display: inline-block;
+  text-decoration: none;
+
+  border: 1px solid #000;
+  padding: 5px 10px;
+}
+
+.main-nav-link:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* when clicking on anchor tag */
+.main-nav-link:active {
+  color: #fff;
+  outline: none;
+}
+
+/**************************/
+/* GENERAL REUSABLE COMPONENTS */
+/**************************/
+
+.container {
+  /* max-width: 120rem; */
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.2;
+  margin: 4rem;
+  color: #fff;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.margin-right-sm {
+  margin-right: 2rem !important;
+}
+
+section {
+  padding: 9.6rem 0;
+}
+
+/**************************/
+/* GRID REUSABLE */
+/**************************/
+
+.grid {
+  display: grid;
+  gap: 3.2rem;
+  row-gap: 3.2rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+/**************************/
+/* HERO SECTION */
+/**************************/
+
+.section-hero {
+  background-image: url(https://puls-img.lpl-cloud.com/c_limit,w_1400/q_auto:best,dpr_2/1634805909983-mask2copyjpg_4316x5760_max_lg_lg.jpg);
+  background-size: cover;
+  background-position: 50% 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9.6rem 0;
+}
+
+.section-universities {
+  padding: 0;
+}
+
+/**************************/
+/* PRICING SECTION */
+/**************************/
+
+.section-pricing {
+  padding: 9.6rem 0;
+  word-break: break-word;
+}
+
+.pricing,
+.list {
+  border: 1px solid #000;
+  padding: 3.2rem 1.6rem 4.8rem 2.8rem;
+  overflow: hidden;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6 rem;
+  line-height: 2.6;
+}
+
+/**************************/
+/* FOOTER */
+/**************************/
+
+.footer {
+  border-top: 1px solid #000;
+  padding: 1rem 1rem;
+  margin-top: 80px;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/**************************/
+/* NAV */
+/**************************/
+
+nav {
+  flex: 0 80%;
+}
+
+/**************************/
+/* MODAL */
+/**************************/
+
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(222 214 214 / 40%);
+  backdrop-filter: blur(10px);
+}
+
+.modal-container {
+  border: 4px solid brown;
+  padding: 2rem 3rem 2rem 3rem;
+  max-width: 400px;
+  margin: 2rem auto 4rem auto;
+  background-color: rgb(255, 248, 248);
+}
+/**************************/
+/* FORM */
+/**************************/
+
+form {
+  max-width: 100%;
+  margin: 30px auto;
+  text-align: left;
+  border-radius: 10px;
+}
+label {
+  color: #aaa;
+  display: inline-block;
+  margin: 25px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 0px 6px;
+}
+input,
+select {
+  display: block;
+  padding: 10px 6px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  font-family: inherit;
+}
+input[type='checkbox'] {
+  display: inline-block;
+  width: 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 2px;
+}
+
+input[type='checkbox']:before {
+  border: 1px solid #808080;
+  background: #000;
+  border-radius: 0;
+}
+input[type='checkbox']:after {
+  border: 1px solid #808080;
+  background: #000;
+  border-radius: 0;
+}
+input[type='checkbox']:checked:after {
+  border: 1px solid #808080;
+  background: #000;
+  border-radius: 0;
+}
+
+/**************************/
+/* SIDEBAR */
+/**************************/
+
+.wrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 0 1rem 1rem;
+}
+
+.modules {
+  max-height: 45rem; /* 65 */
+  overflow: scroll;
+}
+
+.module {
+  border: 1px solid #000;
+  padding: 2rem 2rem;
+  margin: 0 0 1rem 0;
+}
+
+/**************************/
+/* UNIVERSITIES */
+/**************************/
+
+.the-university {
+  border: 1px solid #000;
+  padding: 2rem 2rem;
+}
+
+.university-link:link {
+  color: #000;
+  text-decoration: none;
+}
+
+.university-link:visited {
+  color: #000;
+}
+
+.university-link:hover {
+  color: #000;
+}
+
+.university-link:active {
+  color: #000;
+  outline: none;
+}
+
+/**************************/
+/* UNIVERSITIES */
+/**************************/
+
+.spinner-container {
+  padding: 2rem 2rem;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(119, 119, 119, 0.2);
+  border-right: 1.1em solid rgba(119, 119, 119, 0.2);
+  border-bottom: 1.1em solid rgba(119, 119, 119, 0.2);
+  border-left: 1.1em solid #000000;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.8s infinite linear;
+  animation: load8 0.8s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/**************************/
+/* PAGINATION */
+/**************************/
+
+.pagination {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.page {
+  border: 1px solid #000;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.current-page {
+  background-color: #000;
+  color: #fff;
+}

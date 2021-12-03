@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/src/img/favicon.ico" sizes="any"><!-- 32×32 -->
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./src/css/styles.css" />
+	<link rel="stylesheet" href="./src/css/queries.css" />
+
+	<script type="module" src="src/js/controller.js" defer></script>
+	<title>Find your next University</title>
+</head>
+
+<body>
+	<header class="header">
+		<a class="logo" href="/index.html">
+			Universities
+		</a>
+		<nav class="main-nav">
+			<form class="search">
+				<input type="text" placeholder="Search Universities" name="term" autocomplete="off">
+			</form>
+		</nav>
+	</header>
+
+	<main>
+		<section class="section-hero">
+			<div class="hero">
+				<h1 class="heading-primary">Find your next University</h1>
+			</div>
+		</section>
+
+
+		<div class="container">
+			<div class="wrapper grid grid--2-cols">
+				<div class="modules">
+					<!-- <a href="#copenhagen+business+school" class="university-link">
+						<div class="module">
+							<h3>Copenhagen Business School</h3>
+							<p>Quod tenetur nulla, voluptas perferendis, rerum distinctio aut suscipit labore magni
+								doloribus.</p>
+						</div>
+					</a>
+
+					<a href="#aarhus+school+of+architecture" class="university-link">
+						<div class="module">
+							<h3>Aarhus School of Architecture</h3>
+							<p>Quod tenetur nulla, voluptas perferendis, rerum distinctio aut suscipit labore magni
+								doloribus.</p>
+						</div>
+					</a> -->
+
+				</div>
+				<div class="main">
+					<section class="section-universities">
+						<div class="single-university">
+							<!-- <div class="the-university">
+								<h2>Rerum sint quod</h2>
+								<h3>Rerum sint quod</h3>
+								<p>Quod tenetur nulla, voluptas perferendis, rerum distinctio aut suscipit labore magni
+									doloribus.</p>
+							</div> -->
+						</div>
+
+					</section>
+				</div>
+				<div class="pagination">
+					<!-- <div class="page">1</div>
+					<div class="page">2</div>
+					<div class="page">3</div>
+					<div class="page">4</div> -->
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+
+	<footer class="footer">
+		<p class="copyright">&copy; CSS Library</p>
+	</footer>
+
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyB4UNtLm1gG-_afnSj5BpIPxK41F4cKwJQ",
+			authDomain: "teach-firebase-and-firestore.firebaseapp.com",
+			projectId: "teach-firebase-and-firestore",
+			storageBucket: "teach-firebase-and-firestore.appspot.com",
+			messagingSenderId: "326075475560",
+			appId: "1:326075475560:web:68503f6b0602f9fb5d7ddd"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		const db = firebase.firestore();
+	</script>
+</body>
+
+</html>
