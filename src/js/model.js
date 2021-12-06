@@ -50,8 +50,6 @@ export const loadUniversities = async function (country) {
       `${UNIVERSITY_BY_COUNTRY_API_URL}${country}`
     );
 
-    console.log('og', `${UNIVERSITY_BY_COUNTRY_API_URL}${country}`);
-
     // check if status is ok if not throw and error
     if (responseUniversities.ok === true) {
       const data = await responseUniversities.json();

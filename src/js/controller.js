@@ -51,7 +51,6 @@ const showUniversities = async function (pageNumber, country, query) {
   // check if query is true
   if (query !== undefined && query.length > 0) {
     //
-    console.log(query !== undefined);
     await model.loadUniversitiesByTerm(query);
     //
     //
@@ -74,7 +73,6 @@ const showUniversities = async function (pageNumber, country, query) {
     return;
   }
   //
-  console.log('see', country);
   // check if country exist in local storage
   if (localStorage.getItem('country')) {
     country = localStorage.getItem('country');
