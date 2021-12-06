@@ -298,15 +298,15 @@ section {
 }
 
 .grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid--center-v {
@@ -467,15 +467,13 @@ input[type='checkbox']:checked:after {
 /**************************/
 
 .wrapper {
-  grid-template-columns: 1fr 1fr;
-  padding: 2rem 0 1rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 .modules {
   height: 45rem; /* 65 */
   overflow: scroll;
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
 }
 
 .university-link {
@@ -490,7 +488,7 @@ input[type='checkbox']:checked:after {
 }
 .university-link:last-child {
   margin: 0 0 0 0;
-  border-bottom: none;
+  /* border-bottom: none; */
 }
 
 /**************************/
@@ -579,7 +577,7 @@ input[type='checkbox']:checked:after {
 .pagination {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .page {

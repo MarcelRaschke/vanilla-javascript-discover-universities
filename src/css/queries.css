@@ -48,7 +48,8 @@
 @media (max-width: 44em) {
   .grid--3-cols,
   .grid--4-cols {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

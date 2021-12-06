@@ -35,29 +35,87 @@ init();
 //
 //
 // load universities
-const showUniversities = async function (
-  pageNumber,
-  country = localStorage.getItem('country')
-) {
+const showUniversities = async function (pageNumber, country, query) {
+  // reset local storage item "searchTerm" on load
+  // window.addEventListener('beforeunload', (e) => {
+  window.addEventListener('unload', (e) => {
+    localStorage.removeItem('searchTerm');
+  });
+
+  if (localStorage.getItem('searchTerm')) {
+    query = localStorage.getItem('searchTerm');
+  }
+
   // render spinner until api call is done
   universitiesView.renderSpinner();
-
-  // load universities from model
-  await model.loadUniversities(country);
-
-  // console.log('see this one', model.getSearchResultsPage(pageNumber));
-
-  // call render universities view with universities data as input and page number
-  // renderUniversitiesView.renderUniversities(model.state.search.universities);
-  renderUniversitiesView.renderUniversities(
-    model.getSearchResultsPage(pageNumber)
-  );
+  // check if query is true
+  if (query !== undefined && query.length > 0) {
+    //
+    console.log('hi', query);
+    console.log(query !== undefined);
+    await model.loadUniversitiesByTerm(query);
+    //
+    //
+    //
+    //
+    //
+    // call render universities view with universities data as input and page number
+    // renderUniversitiesView.renderUniversities(model.state.search.universities);
+    renderUniversitiesView.renderUniversities(
+      model.getSearchResultsPage(pageNumber)
+    );
+    //
+    // render pagination in pagination view. input number of pages and current page
+    paginationView.renderPagination(
+      model.state.search.numberOfPages,
+      model.state.search.currentPage
+    );
+    //
+    //
+    return;
+  }
   //
-  // render pagination in pagination view. input number of pages and current page
-  paginationView.renderPagination(
-    model.state.search.numberOfPages,
-    model.state.search.currentPage
-  );
+  // check if country exist in local storage
+  if (localStorage.getItem('country')) {
+    country = localStorage.getItem('country');
+    // load universities from model
+    await model.loadUniversities(country);
+    //
+    //
+    //
+    // call render universities view with universities data as input and page number
+    // renderUniversitiesView.renderUniversities(model.state.search.universities);
+    renderUniversitiesView.renderUniversities(
+      model.getSearchResultsPage(pageNumber)
+    );
+    //
+    // render pagination in pagination view. input number of pages and current page
+    paginationView.renderPagination(
+      model.state.search.numberOfPages,
+      model.state.search.currentPage
+    );
+  } else {
+    country = 'denmark';
+    // load universities from model
+    await model.loadUniversities(country);
+    //
+    //
+    //
+    //
+    //
+    // call render universities view with universities data as input and page number
+    // renderUniversitiesView.renderUniversities(model.state.search.universities);
+    renderUniversitiesView.renderUniversities(
+      model.getSearchResultsPage(pageNumber)
+    );
+    //
+    // render pagination in pagination view. input number of pages and current page
+    paginationView.renderPagination(
+      model.state.search.numberOfPages,
+      model.state.search.currentPage
+    );
+  }
+  //
 };
 showUniversities();
 //
@@ -76,8 +134,16 @@ paginationView.clickedPage(initPageNumber);
 //
 //
 // search view
-const initSearch = function (chosenCountry) {
+const initSearch = function (chosenCountry, query) {
   localStorage.setItem('country', chosenCountry);
-  showUniversities(1, localStorage.getItem('country'));
+  localStorage.setItem('searchTerm', query);
+  showUniversities(
+    1,
+    localStorage.getItem('country'),
+    localStorage.getItem('searchTerm')
+  );
 };
 searchView.search(initSearch);
+//
+//
+//
