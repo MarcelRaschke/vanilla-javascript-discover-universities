@@ -3,6 +3,7 @@ import renderUniversity from './views/universityView.js';
 import renderUniversitiesView from './views/universitiesView.js';
 import paginationView from './views/paginationView.js';
 import universitiesView from './views/universitiesView.js';
+import searchView from './views/searchView.js';
 
 const showUniversity = async function () {
   // getting hash-id
@@ -34,28 +35,29 @@ init();
 //
 //
 // load universities
-const showUniversities = async function (pageNumber) {
+const showUniversities = async function (
+  pageNumber,
+  country = localStorage.getItem('country')
+) {
   // render spinner until api call is done
   universitiesView.renderSpinner();
 
   // load universities from model
-  await model.loadUniversities();
+  await model.loadUniversities(country);
 
-  // call render universities view with universities data as input
+  // console.log('see this one', model.getSearchResultsPage(pageNumber));
+
+  // call render universities view with universities data as input and page number
   // renderUniversitiesView.renderUniversities(model.state.search.universities);
   renderUniversitiesView.renderUniversities(
     model.getSearchResultsPage(pageNumber)
   );
   //
-  //
-  // render pagination in pagination view. Input number of pages and current page
+  // render pagination in pagination view. input number of pages and current page
   paginationView.renderPagination(
     model.state.search.numberOfPages,
     model.state.search.currentPage
   );
-
-  // clicked page number
-  paginationView.clickedPage(initPageNumber);
 };
 showUniversities();
 //
@@ -66,4 +68,16 @@ const initPageNumber = function (pageNumber) {
   // load universities
   showUniversities(pageNumber);
 };
+// clicked page number
+paginationView.clickedPage(initPageNumber);
 //
+//
+//
+//
+//
+// search view
+const initSearch = function (chosenCountry) {
+  localStorage.setItem('country', chosenCountry);
+  showUniversities(1, localStorage.getItem('country'));
+};
+searchView.search(initSearch);

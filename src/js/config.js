@@ -7,7 +7,7 @@ export const UNIVERSITY_BY_NAME_API_URL = `http://universities.hipolabs.com/sear
 // export const UNIVERSITY_BY_NAME_API_URL = `http://universities.hipolabs.com/search?name=copenhagen%20business%20school`;
 
 // university by country
-export const UNIVERSITY_BY_COUNTRY_API_URL = `http://universities.hipolabs.com/search?country=denmark`;
+export const UNIVERSITY_BY_COUNTRY_API_URL = `http://universities.hipolabs.com/search?country=`;
 // export const UNIVERSITY_BY_COUNTRY_API_URL = `http://universities.hipolabs.com/search?country=denmark`;
 
 // universities all

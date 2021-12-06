@@ -129,8 +129,8 @@ a:active {
   color: #fff;
 
   text-decoration: none;
-  font-weight: 500;
-  padding: 1.2rem 2.2rem;
+  font-weight: 400;
+  padding: 1rem 1.2rem;
   text-align: center;
 
   /* Only necessary for .btn */
@@ -140,12 +140,13 @@ a:active {
 
   /* Put transition on original "state" */
   transition: all 0.2s;
+  font-size: 0.8rem;
 }
 
 .btn,
 .btn:hover,
 .btn:active {
-  background-color: brown;
+  background-color: #000;
   color: #fff;
 }
 
@@ -408,6 +409,9 @@ form {
   margin: 30px auto;
   text-align: left;
   border-radius: 10px;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
 }
 label {
   color: #aaa;
@@ -422,12 +426,17 @@ input,
 select {
   display: block;
   padding: 10px 6px;
-  width: 100%;
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #ddd;
   color: #555;
   font-family: inherit;
+}
+input {
+  flex: 2;
+}
+select {
+  flex: 1;
 }
 input[type='checkbox'] {
   display: inline-block;
@@ -463,14 +472,25 @@ input[type='checkbox']:checked:after {
 }
 
 .modules {
-  max-height: 45rem; /* 65 */
+  height: 45rem; /* 65 */
   overflow: scroll;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
-.module {
+.university-link {
+  display: block;
   border: 1px solid #000;
   padding: 2rem 2rem;
   margin: 0 0 1rem 0;
+}
+
+.university-link:first-child {
+  border-top: none;
+}
+.university-link:last-child {
+  margin: 0 0 0 0;
+  border-bottom: none;
 }
 
 /**************************/
@@ -480,6 +500,8 @@ input[type='checkbox']:checked:after {
 .the-university {
   border: 1px solid #000;
   padding: 2rem 2rem;
+  background-color: #000;
+  color: #fff;
 }
 
 .university-link:link {
@@ -555,15 +577,16 @@ input[type='checkbox']:checked:after {
 /**************************/
 
 .pagination {
-  display: flex;
+  display: grid;
   gap: 2rem;
-  align-items: center;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .page {
   border: 1px solid #000;
   padding: 1rem 2rem;
   cursor: pointer;
+  text-align: center;
 }
 
 .current-page {

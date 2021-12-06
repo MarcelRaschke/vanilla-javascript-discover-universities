@@ -44,10 +44,10 @@ export const loadUniversity = async function (id) {
 //
 //
 // loadUniversities
-export const loadUniversities = async function (id) {
+export const loadUniversities = async function (country = 'iceland') {
   try {
     const responseUniversities = await fetch(
-      `${UNIVERSITY_BY_COUNTRY_API_URL}`
+      `${UNIVERSITY_BY_COUNTRY_API_URL}${country}`
     );
 
     // check if status is ok if not throw and error
