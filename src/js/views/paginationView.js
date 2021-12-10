@@ -33,7 +33,7 @@ export class PaginationView {
       html += `
 	  <div class="page${
       i === currentPage ? ' current-page' : ''
-    }" data-page-number="${i}">${i}</div>
+    }" data-page-number="${i}"><p>${i}</p></div>
 	  `;
     }
     return html;
